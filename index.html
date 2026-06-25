@@ -1,0 +1,514 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Agung Cahyo Nugroho - Portfolio</title>
+
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: "Inter", "Segoe UI", Arial, sans-serif;
+    }
+
+    body {
+      min-height: 100vh;
+      background:
+        radial-gradient(circle at top left, rgba(56, 189, 248, 0.35), transparent 30%),
+        radial-gradient(circle at bottom right, rgba(99, 102, 241, 0.35), transparent 30%),
+        linear-gradient(135deg, #020617, #0f172a, #1e293b);
+      color: #f8fafc;
+      padding: 40px 18px;
+    }
+
+    .container {
+      width: 100%;
+      max-width: 1100px;
+      margin: auto;
+      animation: pageFade 1s ease forwards;
+    }
+
+    @keyframes pageFade {
+      from {
+        opacity: 0;
+        transform: translateY(24px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    .hero {
+      display: grid;
+      grid-template-columns: 1.2fr 0.8fr;
+      gap: 24px;
+      margin-bottom: 24px;
+    }
+
+    .card {
+      background: rgba(255, 255, 255, 0.09);
+      border: 1px solid rgba(255, 255, 255, 0.15);
+      border-radius: 28px;
+      padding: 28px;
+      backdrop-filter: blur(18px);
+      box-shadow: 0 24px 80px rgba(0, 0, 0, 0.35);
+      transition: 0.35s ease;
+    }
+
+    .card:hover {
+      transform: translateY(-6px);
+      border-color: rgba(125, 211, 252, 0.45);
+      box-shadow: 0 28px 90px rgba(14, 165, 233, 0.18);
+    }
+
+    .badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 8px 14px;
+      border-radius: 999px;
+      background: rgba(56, 189, 248, 0.15);
+      color: #bae6fd;
+      font-size: 13px;
+      margin-bottom: 18px;
+      border: 1px solid rgba(125, 211, 252, 0.35);
+    }
+
+    .pulse-dot {
+      width: 8px;
+      height: 8px;
+      background: #22c55e;
+      border-radius: 50%;
+      box-shadow: 0 0 0 rgba(34, 197, 94, 0.7);
+      animation: pulse 1.8s infinite;
+    }
+
+    @keyframes pulse {
+      0% {
+        box-shadow: 0 0 0 0 rgba(34, 197, 94, 0.7);
+      }
+      70% {
+        box-shadow: 0 0 0 10px rgba(34, 197, 94, 0);
+      }
+      100% {
+        box-shadow: 0 0 0 0 rgba(34, 197, 94, 0);
+      }
+    }
+
+    h1 {
+      font-size: clamp(34px, 5vw, 58px);
+      line-height: 1.05;
+      margin-bottom: 14px;
+      letter-spacing: -1.5px;
+    }
+
+    .gradient-text {
+      background: linear-gradient(90deg, #38bdf8, #818cf8, #c084fc);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+
+    .subtitle {
+      font-size: 18px;
+      color: #cbd5e1;
+      line-height: 1.7;
+      max-width: 720px;
+    }
+
+    .profile-box {
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      gap: 18px;
+    }
+
+    .avatar {
+      width: 92px;
+      height: 92px;
+      border-radius: 26px;
+      background: linear-gradient(135deg, #38bdf8, #6366f1);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 38px;
+      font-weight: 800;
+      box-shadow: 0 18px 45px rgba(56, 189, 248, 0.3);
+      animation: float 4s ease-in-out infinite;
+    }
+
+    @keyframes float {
+      0%, 100% {
+        transform: translateY(0);
+      }
+      50% {
+        transform: translateY(-10px);
+      }
+    }
+
+    .contact-list {
+      display: grid;
+      gap: 12px;
+    }
+
+    .contact-item {
+      padding: 13px 15px;
+      border-radius: 16px;
+      background: rgba(15, 23, 42, 0.55);
+      border: 1px solid rgba(255, 255, 255, 0.08);
+    }
+
+    .contact-label {
+      display: block;
+      color: #94a3b8;
+      font-size: 12px;
+      margin-bottom: 4px;
+    }
+
+    .contact-value {
+      color: #f8fafc;
+      font-weight: 600;
+      font-size: 14px;
+    }
+
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 24px;
+      margin-bottom: 24px;
+    }
+
+    .section-title {
+      font-size: 20px;
+      margin-bottom: 18px;
+    }
+
+    .skills {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+    }
+
+    .skill {
+      padding: 9px 13px;
+      background: rgba(56, 189, 248, 0.14);
+      color: #e0f2fe;
+      border-radius: 999px;
+      font-size: 13px;
+      border: 1px solid rgba(125, 211, 252, 0.25);
+      transition: 0.25s ease;
+    }
+
+    .skill:hover {
+      transform: scale(1.08);
+      background: rgba(56, 189, 248, 0.28);
+    }
+
+    .timeline {
+      display: grid;
+      gap: 18px;
+    }
+
+    .timeline-item {
+      position: relative;
+      padding-left: 22px;
+      border-left: 2px solid rgba(56, 189, 248, 0.35);
+    }
+
+    .timeline-item::before {
+      content: "";
+      position: absolute;
+      left: -7px;
+      top: 4px;
+      width: 12px;
+      height: 12px;
+      border-radius: 50%;
+      background: #38bdf8;
+      box-shadow: 0 0 20px rgba(56, 189, 248, 0.7);
+    }
+
+    .timeline-item h3 {
+      font-size: 16px;
+      margin-bottom: 4px;
+    }
+
+    .timeline-item span {
+      display: block;
+      color: #93c5fd;
+      font-size: 13px;
+      margin-bottom: 8px;
+    }
+
+    .timeline-item p {
+      color: #cbd5e1;
+      font-size: 14px;
+      line-height: 1.6;
+    }
+
+    .project-list {
+      display: grid;
+      gap: 14px;
+    }
+
+    .project {
+      padding: 16px;
+      border-radius: 18px;
+      background: rgba(15, 23, 42, 0.55);
+      border: 1px solid rgba(255, 255, 255, 0.08);
+      transition: 0.3s ease;
+    }
+
+    .project:hover {
+      transform: translateX(8px);
+      background: rgba(30, 41, 59, 0.8);
+    }
+
+    .project h3 {
+      font-size: 16px;
+      margin-bottom: 6px;
+    }
+
+    .project p {
+      color: #cbd5e1;
+      font-size: 14px;
+      line-height: 1.6;
+    }
+
+    .full {
+      grid-column: 1 / -1;
+    }
+
+    .footer {
+      text-align: center;
+      color: #94a3b8;
+      font-size: 13px;
+      margin-top: 28px;
+    }
+
+    @media (max-width: 900px) {
+      .hero,
+      .grid {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    @media (max-width: 520px) {
+      body {
+        padding: 22px 14px;
+      }
+
+      .card {
+        padding: 22px;
+        border-radius: 22px;
+      }
+
+      .subtitle {
+        font-size: 15px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <main class="container">
+    <section class="hero">
+      <div class="card">
+        <div class="badge">
+          <span class="pulse-dot"></span>
+          Available for Remote / Freelance AI Evaluation
+        </div>
+
+        <h1>
+          Agung Cahyo <br />
+          <span class="gradient-text">Nugroho</span>
+        </h1>
+
+        <p class="subtitle">
+          Mobile Developer dan Frontend Developer dengan pengalaman sejak 2018.
+          Berpengalaman membangun aplikasi mobile, web, POS, CRM, customer loyalty,
+          serta internet banking. Memiliki kemampuan tambahan dalam AI evaluation,
+          data validation, technical documentation, dan evaluasi bahasa Jawa.
+        </p>
+      </div>
+
+      <aside class="card profile-box">
+        <div class="avatar">AC</div>
+
+        <div class="contact-list">
+          <div class="contact-item">
+            <span class="contact-label">Role Utama</span>
+            <span class="contact-value">Mobile Developer | Frontend Developer</span>
+          </div>
+
+          <div class="contact-item">
+            <span class="contact-label">Spesialisasi Tambahan</span>
+            <span class="contact-value">Javanese AI Evaluation</span>
+          </div>
+
+          <div class="contact-item">
+            <span class="contact-label">Email</span>
+            <span class="contact-value">agung.cnugr@gmail.com</span>
+          </div>
+
+          <div class="contact-item">
+            <span class="contact-label">Lokasi</span>
+            <span class="contact-value">Indonesia | Remote</span>
+          </div>
+        </div>
+      </aside>
+    </section>
+
+    <section class="grid">
+      <div class="card">
+        <h2 class="section-title">Technical Skills</h2>
+
+        <div class="skills">
+          <span class="skill">React Native</span>
+          <span class="skill">Flutter</span>
+          <span class="skill">React.js</span>
+          <span class="skill">Vue.js</span>
+          <span class="skill">JavaScript</span>
+          <span class="skill">Java</span>
+          <span class="skill">HTML</span>
+          <span class="skill">Git</span>
+          <span class="skill">Firebase</span>
+          <span class="skill">AWS</span>
+          <span class="skill">MySQL</span>
+          <span class="skill">Supabase</span>
+        </div>
+      </div>
+
+      <div class="card">
+        <h2 class="section-title">AI & Language Skills</h2>
+
+        <div class="skills">
+          <span class="skill">Javanese Evaluation</span>
+          <span class="skill">Ngoko & Krama</span>
+          <span class="skill">AI Response Rating</span>
+          <span class="skill">Annotation</span>
+          <span class="skill">Grammar Review</span>
+          <span class="skill">Fluency Review</span>
+          <span class="skill">Cultural Context</span>
+          <span class="skill">Error Documentation</span>
+        </div>
+      </div>
+
+      <div class="card">
+        <h2 class="section-title">Languages</h2>
+
+        <div class="timeline">
+          <div class="timeline-item">
+            <h3>Javanese</h3>
+            <span>Native / Mother Tongue</span>
+            <p>Familiar dengan Ngoko, Krama, daily usage, dan konteks budaya.</p>
+          </div>
+
+          <div class="timeline-item">
+            <h3>Indonesian</h3>
+            <span>Fluent / Professional</span>
+            <p>Terbiasa dengan dokumentasi formal dan bahasa administrasi.</p>
+          </div>
+
+          <div class="timeline-item">
+            <h3>English</h3>
+            <span>Professional Working Proficiency</span>
+            <p>Mampu membaca guideline, dokumentasi teknis, dan kolaborasi remote.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="grid">
+      <div class="card full">
+        <h2 class="section-title">Work Experience</h2>
+
+        <div class="timeline">
+          <div class="timeline-item">
+            <h3>Mobile Developer - Red Ant Colony</h3>
+            <span>Jul 2021 - Present</span>
+            <p>
+              Mengembangkan dan memelihara aplikasi mobile menggunakan React Native dan Flutter
+              untuk kebutuhan CRM, POS, customer loyalty, dan alur operasional.
+            </p>
+          </div>
+
+          <div class="timeline-item">
+            <h3>Frontend Developer - PT Aqwam Media Profetika</h3>
+            <span>Sep 2020 - Jul 2021</span>
+            <p>
+              Membangun website responsif menggunakan React.js, melakukan integrasi API,
+              serta menjaga konsistensi UI dan pengalaman pengguna.
+            </p>
+          </div>
+
+          <div class="timeline-item">
+            <h3>Application Developer - PT Multipolar Technology Tbk</h3>
+            <span>Dec 2018 - Sep 2020</span>
+            <p>
+              Mengembangkan aplikasi internet banking dengan fokus pada keamanan,
+              keandalan, alur transaksi, dan fitur pembayaran seperti SAMSAT, MPN,
+              Gopay, Tokopedia, dan fitur perbankan lainnya.
+            </p>
+          </div>
+
+          <div class="timeline-item">
+            <h3>Game Developer Intern - Educa Studio</h3>
+            <span>Jan 2018 - Mar 2018</span>
+            <p>
+              Mengembangkan idle game menggunakan Cocos2d-x dan C++,
+              termasuk game logic, interaction flow, dan testing iteratif.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="grid">
+      <div class="card full">
+        <h2 class="section-title">Selected Projects</h2>
+
+        <div class="project-list">
+          <div class="project">
+            <h3>Javamas System Mobile</h3>
+            <p>
+              Aplikasi CRM Android untuk mendukung marketing dan sales performance.
+              Dibangun menggunakan React Native, Git, Codemagic CI, Firebase, dan AWS.
+            </p>
+          </div>
+
+          <div class="project">
+            <h3>Petani Full Power</h3>
+            <p>
+              Aplikasi customer loyalty Android untuk penukaran poin, promo,
+              dan aktivitas marketing. Versi awal menggunakan React Native,
+              lalu dikembangkan ulang menggunakan Flutter.
+            </p>
+          </div>
+
+          <div class="project">
+            <h3>Zycas POS</h3>
+            <p>
+              Aplikasi point of sales untuk transaksi, laporan, dan inventory management.
+              Dikembangkan menggunakan Flutter, Bloc, Firebase, Supabase, dan Git.
+            </p>
+          </div>
+
+          <div class="project">
+            <h3>Internet Banking Bank Sumsel Babel</h3>
+            <p>
+              Pengembangan fitur pembayaran dan workflow internet banking menggunakan
+              Java Struts, Git, MySQL, dan ISO8583.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <p class="footer">
+      © 2026 Agung Cahyo Nugroho — Personal Portfolio Page
+    </p>
+  </main>
+</body>
+</html>
