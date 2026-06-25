@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Agung Cahyo Nugroho - Portfolio</title>
+  <title>Agung Cahyo Nugroho - CV Profile</title>
 
   <style>
     * {
@@ -16,8 +16,8 @@
     body {
       min-height: 100vh;
       background:
-        radial-gradient(circle at top left, rgba(56, 189, 248, 0.35), transparent 30%),
-        radial-gradient(circle at bottom right, rgba(99, 102, 241, 0.35), transparent 30%),
+        radial-gradient(circle at top left, rgba(59, 130, 246, 0.35), transparent 28%),
+        radial-gradient(circle at bottom right, rgba(14, 165, 233, 0.25), transparent 32%),
         linear-gradient(135deg, #020617, #0f172a, #1e293b);
       color: #f8fafc;
       padding: 40px 18px;
@@ -25,12 +25,12 @@
 
     .container {
       width: 100%;
-      max-width: 1100px;
+      max-width: 1150px;
       margin: auto;
-      animation: pageFade 1s ease forwards;
+      animation: fadeIn 1s ease forwards;
     }
 
-    @keyframes pageFade {
+    @keyframes fadeIn {
       from {
         opacity: 0;
         transform: translateY(24px);
@@ -43,25 +43,25 @@
 
     .hero {
       display: grid;
-      grid-template-columns: 1.2fr 0.8fr;
+      grid-template-columns: 1.3fr 0.7fr;
       gap: 24px;
       margin-bottom: 24px;
     }
 
     .card {
       background: rgba(255, 255, 255, 0.09);
-      border: 1px solid rgba(255, 255, 255, 0.15);
+      border: 1px solid rgba(255, 255, 255, 0.14);
       border-radius: 28px;
       padding: 28px;
       backdrop-filter: blur(18px);
-      box-shadow: 0 24px 80px rgba(0, 0, 0, 0.35);
+      box-shadow: 0 24px 70px rgba(0, 0, 0, 0.35);
       transition: 0.35s ease;
     }
 
     .card:hover {
       transform: translateY(-6px);
-      border-color: rgba(125, 211, 252, 0.45);
-      box-shadow: 0 28px 90px rgba(14, 165, 233, 0.18);
+      border-color: rgba(56, 189, 248, 0.55);
+      box-shadow: 0 28px 80px rgba(14, 165, 233, 0.18);
     }
 
     .badge {
@@ -73,16 +73,15 @@
       background: rgba(56, 189, 248, 0.15);
       color: #bae6fd;
       font-size: 13px;
-      margin-bottom: 18px;
+      margin-bottom: 20px;
       border: 1px solid rgba(125, 211, 252, 0.35);
     }
 
-    .pulse-dot {
+    .dot {
       width: 8px;
       height: 8px;
-      background: #22c55e;
       border-radius: 50%;
-      box-shadow: 0 0 0 rgba(34, 197, 94, 0.7);
+      background: #22c55e;
       animation: pulse 1.8s infinite;
     }
 
@@ -99,7 +98,7 @@
     }
 
     h1 {
-      font-size: clamp(34px, 5vw, 58px);
+      font-size: clamp(36px, 5vw, 58px);
       line-height: 1.05;
       margin-bottom: 14px;
       letter-spacing: -1.5px;
@@ -114,28 +113,28 @@
     .subtitle {
       font-size: 18px;
       color: #cbd5e1;
-      line-height: 1.7;
-      max-width: 720px;
+      line-height: 1.75;
+      max-width: 760px;
     }
 
-    .profile-box {
+    .profile-side {
       display: flex;
       flex-direction: column;
-      justify-content: space-between;
       gap: 18px;
+      justify-content: space-between;
     }
 
     .avatar {
-      width: 92px;
-      height: 92px;
-      border-radius: 26px;
+      width: 96px;
+      height: 96px;
+      border-radius: 28px;
       background: linear-gradient(135deg, #38bdf8, #6366f1);
       display: flex;
       align-items: center;
       justify-content: center;
       font-size: 38px;
       font-weight: 800;
-      box-shadow: 0 18px 45px rgba(56, 189, 248, 0.3);
+      box-shadow: 0 18px 45px rgba(56, 189, 248, 0.32);
       animation: float 4s ease-in-out infinite;
     }
 
@@ -148,29 +147,30 @@
       }
     }
 
-    .contact-list {
+    .info-list {
       display: grid;
       gap: 12px;
     }
 
-    .contact-item {
-      padding: 13px 15px;
+    .info-item {
+      padding: 14px 16px;
       border-radius: 16px;
       background: rgba(15, 23, 42, 0.55);
       border: 1px solid rgba(255, 255, 255, 0.08);
     }
 
-    .contact-label {
+    .info-label {
       display: block;
       color: #94a3b8;
       font-size: 12px;
       margin-bottom: 4px;
     }
 
-    .contact-value {
+    .info-value {
       color: #f8fafc;
-      font-weight: 600;
       font-size: 14px;
+      font-weight: 600;
+      word-break: break-word;
     }
 
     .grid {
@@ -180,9 +180,24 @@
       margin-bottom: 24px;
     }
 
+    .full {
+      grid-column: 1 / -1;
+    }
+
     .section-title {
-      font-size: 20px;
-      margin-bottom: 18px;
+      font-size: 21px;
+      margin-bottom: 20px;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .section-title::before {
+      content: "";
+      width: 8px;
+      height: 24px;
+      border-radius: 999px;
+      background: linear-gradient(180deg, #38bdf8, #6366f1);
     }
 
     .skills {
@@ -192,12 +207,12 @@
     }
 
     .skill {
-      padding: 9px 13px;
+      padding: 9px 14px;
+      border-radius: 999px;
       background: rgba(56, 189, 248, 0.14);
       color: #e0f2fe;
-      border-radius: 999px;
-      font-size: 13px;
       border: 1px solid rgba(125, 211, 252, 0.25);
+      font-size: 13px;
       transition: 0.25s ease;
     }
 
@@ -208,12 +223,12 @@
 
     .timeline {
       display: grid;
-      gap: 18px;
+      gap: 20px;
     }
 
     .timeline-item {
       position: relative;
-      padding-left: 22px;
+      padding-left: 24px;
       border-left: 2px solid rgba(56, 189, 248, 0.35);
     }
 
@@ -221,40 +236,43 @@
       content: "";
       position: absolute;
       left: -7px;
-      top: 4px;
+      top: 5px;
       width: 12px;
       height: 12px;
       border-radius: 50%;
       background: #38bdf8;
-      box-shadow: 0 0 20px rgba(56, 189, 248, 0.7);
+      box-shadow: 0 0 18px rgba(56, 189, 248, 0.8);
     }
 
     .timeline-item h3 {
-      font-size: 16px;
+      font-size: 17px;
       margin-bottom: 4px;
     }
 
-    .timeline-item span {
+    .timeline-item .meta {
       display: block;
       color: #93c5fd;
       font-size: 13px;
       margin-bottom: 8px;
     }
 
-    .timeline-item p {
+    .timeline-item p,
+    .project p,
+    .education p {
       color: #cbd5e1;
       font-size: 14px;
-      line-height: 1.6;
+      line-height: 1.7;
     }
 
-    .project-list {
+    .project-grid {
       display: grid;
-      gap: 14px;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 16px;
     }
 
     .project {
-      padding: 16px;
-      border-radius: 18px;
+      padding: 18px;
+      border-radius: 20px;
       background: rgba(15, 23, 42, 0.55);
       border: 1px solid rgba(255, 255, 255, 0.08);
       transition: 0.3s ease;
@@ -262,41 +280,55 @@
 
     .project:hover {
       transform: translateX(8px);
-      background: rgba(30, 41, 59, 0.8);
+      background: rgba(30, 41, 59, 0.82);
     }
 
     .project h3 {
       font-size: 16px;
-      margin-bottom: 6px;
+      margin-bottom: 5px;
     }
 
-    .project p {
-      color: #cbd5e1;
-      font-size: 14px;
-      line-height: 1.6;
+    .project .meta {
+      display: block;
+      font-size: 13px;
+      color: #93c5fd;
+      margin-bottom: 10px;
     }
 
-    .full {
-      grid-column: 1 / -1;
+    .education h3 {
+      font-size: 17px;
+      margin-bottom: 5px;
+    }
+
+    .education .meta {
+      color: #93c5fd;
+      font-size: 13px;
+      display: block;
+      margin-bottom: 10px;
     }
 
     .footer {
       text-align: center;
       color: #94a3b8;
       font-size: 13px;
-      margin-top: 28px;
+      margin-top: 26px;
     }
 
-    @media (max-width: 900px) {
+    @media (max-width: 920px) {
       .hero,
-      .grid {
+      .grid,
+      .project-grid {
         grid-template-columns: 1fr;
+      }
+
+      .full {
+        grid-column: auto;
       }
     }
 
     @media (max-width: 520px) {
       body {
-        padding: 22px 14px;
+        padding: 24px 14px;
       }
 
       .card {
@@ -307,17 +339,22 @@
       .subtitle {
         font-size: 15px;
       }
+
+      h1 {
+        font-size: 34px;
+      }
     }
   </style>
 </head>
 
 <body>
   <main class="container">
+
     <section class="hero">
       <div class="card">
         <div class="badge">
-          <span class="pulse-dot"></span>
-          Available for Remote / Freelance AI Evaluation
+          <span class="dot"></span>
+          Mobile Developer & Frontend Developer
         </div>
 
         <h1>
@@ -326,35 +363,35 @@
         </h1>
 
         <p class="subtitle">
-          Mobile Developer dan Frontend Developer dengan pengalaman sejak 2018.
-          Berpengalaman membangun aplikasi mobile, web, POS, CRM, customer loyalty,
-          serta internet banking. Memiliki kemampuan tambahan dalam AI evaluation,
-          data validation, technical documentation, dan evaluasi bahasa Jawa.
+          Experienced developer specializing in mobile and frontend development since 2018.
+          Proficient in Flutter, React Native, Vue.js, and React.js, with experience developing
+          applications ranging from CRM systems, POS solutions, customer loyalty applications,
+          warehouse inventory systems, and internet banking platforms.
         </p>
       </div>
 
-      <aside class="card profile-box">
+      <aside class="card profile-side">
         <div class="avatar">AC</div>
 
-        <div class="contact-list">
-          <div class="contact-item">
-            <span class="contact-label">Role Utama</span>
-            <span class="contact-value">Mobile Developer | Frontend Developer</span>
+        <div class="info-list">
+          <div class="info-item">
+            <span class="info-label">Phone</span>
+            <span class="info-value">+62 857 0213 4507</span>
           </div>
 
-          <div class="contact-item">
-            <span class="contact-label">Spesialisasi Tambahan</span>
-            <span class="contact-value">Javanese AI Evaluation</span>
+          <div class="info-item">
+            <span class="info-label">Email</span>
+            <span class="info-value">agung.cnugr@gmail.com</span>
           </div>
 
-          <div class="contact-item">
-            <span class="contact-label">Email</span>
-            <span class="contact-value">agung.cnugr@gmail.com</span>
+          <div class="info-item">
+            <span class="info-label">Main Focus</span>
+            <span class="info-value">Mobile App Development</span>
           </div>
 
-          <div class="contact-item">
-            <span class="contact-label">Lokasi</span>
-            <span class="contact-value">Indonesia | Remote</span>
+          <div class="info-item">
+            <span class="info-label">Experience Since</span>
+            <span class="info-value">2018</span>
           </div>
         </div>
       </aside>
@@ -362,153 +399,179 @@
 
     <section class="grid">
       <div class="card">
-        <h2 class="section-title">Technical Skills</h2>
+        <h2 class="section-title">Skills</h2>
 
         <div class="skills">
-          <span class="skill">React Native</span>
-          <span class="skill">Flutter</span>
-          <span class="skill">React.js</span>
           <span class="skill">Vue.js</span>
+          <span class="skill">React Native</span>
+          <span class="skill">React.js</span>
           <span class="skill">JavaScript</span>
-          <span class="skill">Java</span>
+          <span class="skill">Flutter</span>
           <span class="skill">HTML</span>
+          <span class="skill">Java</span>
+        </div>
+      </div>
+
+      <div class="card">
+        <h2 class="section-title">Technology Exposure</h2>
+
+        <div class="skills">
           <span class="skill">Git</span>
           <span class="skill">Firebase</span>
           <span class="skill">AWS</span>
+          <span class="skill">Codemagic CI</span>
           <span class="skill">MySQL</span>
           <span class="skill">Supabase</span>
+          <span class="skill">Bloc</span>
+          <span class="skill">ISO8583</span>
+          <span class="skill">Java Struts</span>
+          <span class="skill">Cocos2d-x</span>
+          <span class="skill">C++</span>
         </div>
       </div>
 
-      <div class="card">
-        <h2 class="section-title">AI & Language Skills</h2>
+      <div class="card education">
+        <h2 class="section-title">Education</h2>
 
-        <div class="skills">
-          <span class="skill">Javanese Evaluation</span>
-          <span class="skill">Ngoko & Krama</span>
-          <span class="skill">AI Response Rating</span>
-          <span class="skill">Annotation</span>
-          <span class="skill">Grammar Review</span>
-          <span class="skill">Fluency Review</span>
-          <span class="skill">Cultural Context</span>
-          <span class="skill">Error Documentation</span>
-        </div>
+        <h3>Bachelor of Computer Science</h3>
+        <span class="meta">Jul 2014 - Jul 2018</span>
+
+        <p>
+          Informatics Engineering, Universitas Kristen Satya Wacana.
+          Specialized in application development and actively served as a laboratory assistant
+          supporting student practicums and lab development.
+        </p>
       </div>
+    </section>
 
-      <div class="card">
-        <h2 class="section-title">Languages</h2>
+    <section class="card full">
+      <h2 class="section-title">Work Experience</h2>
 
-        <div class="timeline">
-          <div class="timeline-item">
-            <h3>Javanese</h3>
-            <span>Native / Mother Tongue</span>
-            <p>Familiar dengan Ngoko, Krama, daily usage, dan konteks budaya.</p>
-          </div>
+      <div class="timeline">
+        <div class="timeline-item">
+          <h3>Mobile Developer - Red Ant Colony</h3>
+          <span class="meta">Jul 2021 - Present</span>
+          <p>
+            Designed, developed, and maintained mobile applications using React Native and Flutter.
+            Optimized app performance, implemented new features, and collaborated with cross-functional
+            teams to deliver high-quality mobile solutions.
+          </p>
+        </div>
 
-          <div class="timeline-item">
-            <h3>Indonesian</h3>
-            <span>Fluent / Professional</span>
-            <p>Terbiasa dengan dokumentasi formal dan bahasa administrasi.</p>
-          </div>
+        <div class="timeline-item">
+          <h3>Frontend Developer - PT Aqwam Media Profetika</h3>
+          <span class="meta">Sep 2020 - Jul 2021</span>
+          <p>
+            Designed and implemented user-friendly and responsive websites using React.js.
+            Worked with backend developers to integrate APIs and maintained websites to improve
+            performance and user experience.
+          </p>
+        </div>
 
-          <div class="timeline-item">
-            <h3>English</h3>
-            <span>Professional Working Proficiency</span>
-            <p>Mampu membaca guideline, dokumentasi teknis, dan kolaborasi remote.</p>
-          </div>
+        <div class="timeline-item">
+          <h3>Application Developer - PT Multipolar Technology Tbk</h3>
+          <span class="meta">Dec 2018 - Sep 2020</span>
+          <p>
+            Developed and maintained internet banking applications with focus on security,
+            reliability, UI enhancement, application performance, and critical payment features.
+          </p>
+        </div>
+
+        <div class="timeline-item">
+          <h3>Game Developer Intern - Educa Studio</h3>
+          <span class="meta">Jan 2018 - Mar 2018</span>
+          <p>
+            Created and developed an idle game application inspired by Tap Titan using
+            Cocos2d-x and C++ framework.
+          </p>
         </div>
       </div>
     </section>
 
-    <section class="grid">
-      <div class="card full">
-        <h2 class="section-title">Work Experience</h2>
+    <section class="card full" style="margin-top: 24px;">
+      <h2 class="section-title">Projects</h2>
 
-        <div class="timeline">
-          <div class="timeline-item">
-            <h3>Mobile Developer - Red Ant Colony</h3>
-            <span>Jul 2021 - Present</span>
-            <p>
-              Mengembangkan dan memelihara aplikasi mobile menggunakan React Native dan Flutter
-              untuk kebutuhan CRM, POS, customer loyalty, dan alur operasional.
-            </p>
-          </div>
-
-          <div class="timeline-item">
-            <h3>Frontend Developer - PT Aqwam Media Profetika</h3>
-            <span>Sep 2020 - Jul 2021</span>
-            <p>
-              Membangun website responsif menggunakan React.js, melakukan integrasi API,
-              serta menjaga konsistensi UI dan pengalaman pengguna.
-            </p>
-          </div>
-
-          <div class="timeline-item">
-            <h3>Application Developer - PT Multipolar Technology Tbk</h3>
-            <span>Dec 2018 - Sep 2020</span>
-            <p>
-              Mengembangkan aplikasi internet banking dengan fokus pada keamanan,
-              keandalan, alur transaksi, dan fitur pembayaran seperti SAMSAT, MPN,
-              Gopay, Tokopedia, dan fitur perbankan lainnya.
-            </p>
-          </div>
-
-          <div class="timeline-item">
-            <h3>Game Developer Intern - Educa Studio</h3>
-            <span>Jan 2018 - Mar 2018</span>
-            <p>
-              Mengembangkan idle game menggunakan Cocos2d-x dan C++,
-              termasuk game logic, interaction flow, dan testing iteratif.
-            </p>
-          </div>
+      <div class="project-grid">
+        <div class="project">
+          <h3>Javamas System Mobile</h3>
+          <span class="meta">Nov 2021 - Present | Mobile Developer</span>
+          <p>
+            CRM Android application to improve marketing and sales performance in CV Javamas
+            Agrophos business processes. Built with React Native, Git, Codemagic CI, Firebase,
+            and AWS.
+          </p>
         </div>
-      </div>
-    </section>
 
-    <section class="grid">
-      <div class="card full">
-        <h2 class="section-title">Selected Projects</h2>
+        <div class="project">
+          <h3>Petani Full Power</h3>
+          <span class="meta">Jan 2023 - Present | Mobile Developer</span>
+          <p>
+            Android customer loyalty application for exchanging points, promos, and increasing
+            product marketing. Version 1.0 used React Native and version 2.0 is redeveloped
+            using Flutter.
+          </p>
+        </div>
 
-        <div class="project-list">
-          <div class="project">
-            <h3>Javamas System Mobile</h3>
-            <p>
-              Aplikasi CRM Android untuk mendukung marketing dan sales performance.
-              Dibangun menggunakan React Native, Git, Codemagic CI, Firebase, dan AWS.
-            </p>
-          </div>
+        <div class="project">
+          <h3>Zycas POS</h3>
+          <span class="meta">Aug 2023 - Present | Mobile Developer</span>
+          <p>
+            Point of sales application for managing transactions, reports, and inventory.
+            Developed using Flutter, Bloc, Firebase, Supabase, and Git.
+          </p>
+        </div>
 
-          <div class="project">
-            <h3>Petani Full Power</h3>
-            <p>
-              Aplikasi customer loyalty Android untuk penukaran poin, promo,
-              dan aktivitas marketing. Versi awal menggunakan React Native,
-              lalu dikembangkan ulang menggunakan Flutter.
-            </p>
-          </div>
+        <div class="project">
+          <h3>Yes Plis Ticket Scan</h3>
+          <span class="meta">Mar 2023 - Jun 2023 | Mobile Developer</span>
+          <p>
+            Ticket scanning app for Yesplis concert promoter. Built using React Native for
+            Android to verify QR code tickets in real time.
+          </p>
+        </div>
 
-          <div class="project">
-            <h3>Zycas POS</h3>
-            <p>
-              Aplikasi point of sales untuk transaksi, laporan, dan inventory management.
-              Dikembangkan menggunakan Flutter, Bloc, Firebase, Supabase, dan Git.
-            </p>
-          </div>
+        <div class="project">
+          <h3>Aqwam Stock Opname Mobile</h3>
+          <span class="meta">May 2022 | Mobile Developer</span>
+          <p>
+            Android warehouse inventory application for checking incoming and outgoing goods
+            at PT Aqwam Media Profetika. Developed using React Native.
+          </p>
+        </div>
 
-          <div class="project">
-            <h3>Internet Banking Bank Sumsel Babel</h3>
-            <p>
-              Pengembangan fitur pembayaran dan workflow internet banking menggunakan
-              Java Struts, Git, MySQL, dan ISO8583.
-            </p>
-          </div>
+        <div class="project">
+          <h3>Web Admin Aqwam Store</h3>
+          <span class="meta">Feb 2021 - Mar 2021 | Frontend Developer</span>
+          <p>
+            Admin website for managing online product sales at PT Aqwam Media Profetika.
+            Developed using React.js and MySQL.
+          </p>
+        </div>
+
+        <div class="project">
+          <h3>Internet Banking Bank Sumsel Babel</h3>
+          <span class="meta">Dec 2018 - Sep 2020 | Application Developer</span>
+          <p>
+            Internet banking website with payment features such as SAMSAT, MPN, Gopay,
+            Tokopedia, and others. Developed using Java Struts, Git, MySQL, and ISO8583.
+          </p>
+        </div>
+
+        <div class="project">
+          <h3>Corporate Internet Banking Bank Sumsel Babel</h3>
+          <span class="meta">Dec 2018 - Sep 2020 | Application Developer</span>
+          <p>
+            Corporate internet banking website for Bank Sumsel Babel with payment features
+            using Java Struts, Git, MySQL, ISO8583, and Eclipse as the main development tool.
+          </p>
         </div>
       </div>
     </section>
 
     <p class="footer">
-      © 2026 Agung Cahyo Nugroho — Personal Portfolio Page
+      © 2026 Agung Cahyo Nugroho — CV Profile Website
     </p>
+
   </main>
 </body>
 </html>
